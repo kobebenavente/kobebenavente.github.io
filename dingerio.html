@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kobe Benavente — DingerIO</title>
+  <link rel="icon" type="image/png" href="Images/website_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cutive+Mono&family=Parkinsans:wght@300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="inner-page">
+
+  <header class="site-header">
+    <a href="index.html" class="site-name">Kobe Benavente</a>
+    <nav class="top-nav">
+      <a href="skills.html" class="top-nav-item">Skills / About</a>
+      <a href="projects.html" class="top-nav-item">Project Work</a>
+      <a href="https://github.com/kobebenavente" target="_blank" rel="noopener" class="top-nav-item">GitHub</a>
+      <a href="https://www.linkedin.com/in/kobebenavente/" target="_blank" rel="noopener" class="top-nav-item">LinkedIn</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+
+    <div class="project-page-header">
+      <h1 class="project-page-title">DingerIO</h1>
+      <p class="project-page-subtitle">A live MLB notification platform for Discord</p>
+      <p class="project-repo"><a href="https://github.com/kobebenavente/DingerIO" target="_blank" rel="noopener" class="project-repo-link">https://github.com/kobebenavente/DingerIO</a></p>
+    </div>
+
+    <div class="project-page-body">
+
+      <!-- Carousel -->
+      <div class="carousel">
+        <div class="carousel-track-wrap">
+          <img src="Images/dinger_screenshots/dinger_homepage.png" alt="DingerIO screenshot" class="carousel-slide active" />
+          <img src="Images/dinger_screenshots/team_picker.png" alt="DingerIO screenshot" class="carousel-slide" />
+          <img src="Images/dinger_screenshots/team_dashboard.png" alt="DingerIO screenshot" class="carousel-slide" />
+          <img src="Images/dinger_screenshots/scoring_screenshot.png" alt="DingerIO screenshot" class="carousel-slide carousel-slide--narrow" />
+          <img src="Images/dinger_screenshots/standings_message.png" alt="DingerIO screenshot" class="carousel-slide carousel-slide--narrow" />
+          <button class="carousel-btn carousel-btn--prev" aria-label="Previous"><img src="Images/next.png" class="carousel-arrow-icon flipped" /></button>
+          <button class="carousel-btn carousel-btn--next" aria-label="Next"><img src="Images/next.png" class="carousel-arrow-icon" /></button>
+        </div>
+        <p class="carousel-caption" id="carousel-caption">DingerIO Homepage</p>
+      </div>
+
+      <!-- Description -->
+      <div class="project-page-desc">
+        <h2 class="project-page-section-title">Summary</h2>
+        <p>DingerIO is a personalized MLB notification service that delivers live game updates directly to your
+          Discord server. With 162 games in a season, keeping up with your MLB team's performance, standings, and playoff
+          positioning can become a tedious task. DingerIO eliminates that by automatically pushing the updates that matter most to you. No more
+          manually checking scores, standings, or if your favorite player has made any runs. Just connect your Discord server, subscribe to your team, and choose the events you want to be notified on.</p>
+        <p style="margin-top: 1rem;">Although DingerIO is still under active development and has not yet been deployed to the web, it is fully functional in a local environment and remains one of the projects I am most proud of to date.</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom sections row -->
+    <div class="project-bottom-row">
+
+      <div class="project-bottom-col">
+        <h2 class="project-page-section-title">Technical Stack</h2>
+        <ul class="tech-stack-list">
+          <li><span class="tech-name">Java / Spring Boot</span>: backend application and scheduling</li>
+          <li><span class="tech-name">PostgreSQL</span>: persistent storage for users, teams, players, and subscriptions</li>
+          <li><span class="tech-name">Official MLB Stats API</span>: source for live game data and roster information</li>
+          <li><span class="tech-name">Discord Webhooks</span>: delivery channel for real-time notifications</li>
+          <li><span class="tech-name">React</span>: frontend dashboard for managing notification preferences</li>
+          <li><span class="tech-name">Vite</span>: frontend build tool and development server</li>
+          <li><span class="tech-name">Maven</span>: build and dependency management</li>
+          <li><span class="tech-name">Docker</span>: containerized the local PostgreSQL database for development</li>
+          <li><span class="tech-name">JWT (JSON Web Tokens)</span>: stateless user authentication</li>
+        </ul>
+      </div>
+
+      <div class="project-bottom-col">
+        <h2 class="project-page-section-title">How It Works</h2>
+        <p class="project-bottom-text">On startup, DingerIO syncs all 30 MLB teams and their rosters into a local database. From there, two scheduled processes run in the background. The first sends users a weekly preview of their team's upcoming games every Monday. The second is the core polling loop, running every 15 seconds throughout the day.</p>
+        <p class="project-bottom-text" style="margin-top:0.75rem;">Each cycle fetches that day's schedule and routes each game through one of three handlers based on its status. Pre-game sends a reminder hours before first pitch and again when the game is about to start. Live game fetches the real-time feed and compares it against a stored state if anything changed (a run scored, pitcher swap, inning ended), the appropriate notification fires. Post-game delivers the final score and standings if enabled. Postponed games are also caught and users are notified.</p>
+        <p class="project-bottom-text" style="margin-top:0.75rem;">To prevent duplicate alerts, each game tracks a state object recording the current score, inning, and pitchers. A notification only fires when a change is detected from the previous state.</p>
+      </div>
+
+      <div class="project-bottom-col">
+        <h2 class="project-page-section-title">Challenges & Accomplishments</h2>
+        <p class="project-bottom-text" style="font-weight:700; margin-bottom:0.4rem;">Accomplishments</p>
+        <ul class="tech-stack-list" style="margin-bottom:1.2rem;">
+          <li>Built a fully working end-to-end application covering the backend, database, and frontend entirely independently</li>
+          <li>Designed a flexible event-driven notification system with granular user control over what gets sent</li>
+          <li>Integrated three external systems (MLB Stats API, PostgreSQL, and Discord webhooks) seamlessly</li>
+          <li>Implemented stateless JWT authentication from scratch with a custom Spring Security filter</li>
+          <li>Built a background polling service that reacts to live game events with no user interaction required after setup</li>
+        </ul>
+        <p class="project-bottom-text" style="font-weight:700; margin-bottom:0.4rem;">Challenges</p>
+        <ul class="tech-stack-list">
+          <li>The MLB Stats API has no official documentation, so figuring out the right endpoints, response structure, and deeply nested JSON fields required extensive trial and error along with building a large number of DTOs</li>
+          <li>Preventing duplicate notifications by designing an in-memory GameState object to track what has already been sent, so users are not spammed every 15 seconds when the same game data comes back</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+      const caption = document.getElementById('carousel-caption');
+      const captions = [
+        'DingerIO Homepage',
+        'Choose Your Team',
+        'Team Dashboard',
+        'Live Scoring Notifications',
+        'Live Standings Updates'
+      ];
+      let idx = 0;
+
+      function goTo(n) {
+        slides[idx].classList.remove('active');
+        idx = (n + slides.length) % slides.length;
+        slides[idx].classList.add('active');
+        caption.textContent = captions[idx];
+      }
+
+      document.querySelector('.carousel-btn--prev').addEventListener('click', () => goTo(idx - 1));
+      document.querySelector('.carousel-btn--next').addEventListener('click', () => goTo(idx + 1));
+    })();
+  </script>
+</body>
+</html>
+

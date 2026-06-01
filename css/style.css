@@ -1,0 +1,900 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #fff;
+  color: #1a1a1a;
+  font-family: 'Parkinsans', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Home layout ── */
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0rem;
+}
+
+/* ── Arched title ── */
+.title-wrap {
+  width: min(900px, 95vw);
+  margin-bottom: 0.15rem;
+}
+
+.arched-title {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.arched-title text {
+  font-family: 'Castoro Titling', serif;
+  font-size: 62px;
+  fill: #1a1a1a;
+  letter-spacing: 0.04em;
+  filter: drop-shadow(2px 4px 6px rgba(0,0,0,0.25)) drop-shadow(0 0 20px rgba(0,0,0,0.1));
+}
+
+/* ── Tagline ── */
+.tagline {
+  font-family: 'Caudex', serif;
+  font-size: clamp(1.25rem, 2vw, 1.2rem);
+  font-weight: 300;
+  letter-spacing: 0.08em;
+  color: #666;
+  text-align: center;
+  margin-top: clamp(-3.4rem, -6vw, -2rem);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Menu ── */
+.menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.menu-item {
+  font-family: 'Castoro Titling', serif;
+  font-size: 1.35rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1a1a1a;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, font-weight 0.1s ease;
+  padding: 0.25rem 0;
+}
+
+.menu-item:hover {
+  opacity: 1;
+  font-weight: 700;
+  text-shadow: 0 0 12px rgba(0,0,0,0.25), 0 0 24px rgba(0,0,0,0.1);
+}
+
+/* ── Inner page font scale ── */
+html:has(body.inner-page) {
+  font-size: 120%;
+}
+
+/* ── Inner page body ── */
+body.inner-page {
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Site header ── */
+.site-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 3rem;
+  padding: 0.9rem 3rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.site-name {
+  font-family: 'Castoro Titling', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  color: #1a1a1a;
+}
+
+.top-nav {
+  display: flex;
+  gap: 2.5rem;
+  align-items: center;
+}
+
+
+.top-nav-item {
+  font-family: 'Castoro Titling', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #1a1a1a;
+  opacity: 0.35;
+  transition: opacity 0.2s ease;
+}
+
+.top-nav-item:hover,
+.top-nav-item.active {
+  opacity: 1;
+}
+
+/* ── About layout ── */
+.about-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 4rem;
+  padding: 0.5rem 3rem 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.about-image {
+  flex: 0 0 340px;
+  padding-top: 1rem;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text {
+  flex: 1;
+  padding-top: 0.5rem;
+}
+
+.about-heading-wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 3rem 0;
+  text-align: center;
+}
+
+.about-heading {
+  font-family: 'Caudex', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+.about-heading::after,
+.skills-heading::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: min(320px, 80%);
+  margin: 0.6rem auto 0;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.15) 20%, rgba(0,0,0,0.15) 80%, transparent);
+}
+
+.about-body {
+  font-family: 'Caudex', serif;
+  font-size: 1rem;
+  line-height: 1.9;
+  letter-spacing: 0.06em;
+  text-align: center;
+  color: #1a1a1a;
+}
+
+/* ── Skills section ── */
+.skills-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.5rem 3rem 4rem;
+  text-align: center;
+  width: 100%;
+}
+
+.skills-heading {
+  font-family: 'Caudex', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.2rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 3rem;
+  text-align: left;
+}
+
+.skill-category {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill-cat-title {
+  font-family: 'Caudex', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  padding-bottom: 0.6rem;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+}
+
+.skill-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.skill-list li {
+  font-family: 'Caudex', serif;
+  font-size: 1.05rem;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+}
+
+/* ── Section divider ── */
+.section-divider {
+  border: none;
+  height: 1px;
+  width: min(680px, 75%);
+  margin: 0 auto;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.15) 20%, rgba(0,0,0,0.15) 80%, transparent);
+}
+
+/* ── Education section ── */
+.edu-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3rem 7rem;
+  width: 100%;
+  text-align: left;
+}
+
+.edu-section .skills-heading {
+  text-align: center;
+}
+
+.coursework {
+  margin-top: 0.15rem;
+}
+
+.coursework-toggle {
+  font-family: 'Caudex', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #4a7fa5;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  user-select: none;
+  transition: color 0.2s ease;
+}
+
+.coursework-toggle:hover {
+  color: #2d5f82;
+}
+
+.coursework-toggle::-webkit-details-marker { display: none; }
+
+.coursework-toggle::after {
+  content: '▾';
+  font-size: 1.4rem;
+  transition: transform 0.2s ease;
+}
+
+details[open] .coursework-toggle::after {
+  transform: rotate(-180deg);
+}
+
+.coursework-list {
+  list-style: none;
+  margin-top: 0.75rem;
+  padding-left: 0.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.coursework-list li {
+  font-family: 'Caudex', serif;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  letter-spacing: 0.04em;
+}
+
+.edu-university {
+  font-family: 'Caudex', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  margin-bottom: 0.1rem;
+}
+
+.edu-dates {
+  font-family: 'Caudex', serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: #888;
+  letter-spacing: 0.04em;
+  margin-top: 0.1rem;
+  margin-bottom: 0.2rem;
+}
+
+.edu-details {
+  font-family: 'Caudex', serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+}
+
+/* ── Work experience section ── */
+.work-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3rem 2rem;
+  width: 100%;
+  text-align: left;
+  margin-top: -4rem;
+}
+
+.work-section .skills-heading {
+  text-align: center;
+}
+
+.work-entry {
+  margin-bottom: 2rem;
+}
+
+.work-desc {
+  font-family: 'Caudex', serif;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+  margin-top: 0.3rem;
+  max-width: 700px;
+}
+
+/* ── Interests section ── */
+.interests-section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 3rem 7rem;
+  width: 100%;
+}
+
+.interests-section .skills-heading {
+  text-align: center;
+}
+
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+  text-align: left;
+}
+
+.interest-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.interest-title {
+  font-family: 'Caudex', serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1a1a1a;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(0,0,0,0.12);
+  margin-bottom: 0.3rem;
+}
+
+.interest-desc {
+  font-family: 'Caudex', serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+}
+
+.interest-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.interest-list li {
+  font-family: 'Caudex', serif;
+  font-size: 0.9rem;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+}
+
+/* ── Projects page ── */
+.projects-layout {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 3rem 7rem;
+  width: 100%;
+}
+
+.projects-heading {
+  font-family: 'Caudex', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #1a1a1a;
+}
+
+.projects-heading::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: min(320px, 80%);
+  margin: 0.6rem auto 0;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.15) 20%, rgba(0,0,0,0.15) 80%, transparent);
+}
+
+.project-featured,
+.project-small {
+  text-decoration: none;
+  color: inherit;
+}
+
+.project-featured {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 580px;
+  width: 100%;
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.project-featured:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+.project-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.project-logo--lg {
+  width: 120px;
+  height: 120px;
+}
+
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.project-title {
+  font-family: 'Castoro Titling', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #1a1a1a;
+}
+
+.project-desc {
+  font-family: 'Caudex', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+}
+
+.project-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.project-small {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1.5rem 2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.project-small:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* ── Project page ── */
+.project-page {
+  width: 100%;
+  padding: 2rem 0 6rem;
+}
+
+.project-page-header {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding: 0 3rem;
+}
+
+.project-page-title {
+  font-family: 'Caudex', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #1a1a1a;
+  margin-bottom: 0.4rem;
+}
+
+.project-repo {
+  font-family: 'Caudex', serif;
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 0.4rem;
+  letter-spacing: 0.03em;
+}
+
+.project-repo-link {
+  color: #4a7fa5;
+  text-decoration: none;
+}
+
+.project-repo-link:hover {
+  text-decoration: underline;
+}
+
+.project-page-subtitle {
+  font-family: 'Caudex', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+  color: #666;
+}
+
+.project-page-body {
+  display: flex;
+  align-items: stretch;
+  gap: 0;
+  width: 100%;
+}
+
+/* ── Carousel ── */
+.carousel {
+  flex: 0 0 55%;
+  padding-left: 2rem;
+}
+
+.carousel-track-wrap {
+  position: relative;
+  border-radius: 4px;
+  height: clamp(320px, 40vw, 620px);
+  overflow: hidden;
+}
+
+.carousel-slide {
+  width: 100%;
+  height: 100%;
+  display: none;
+  object-fit: cover;
+}
+
+.carousel-slide.active {
+  display: block;
+}
+
+.carousel-slide--narrow {
+  object-fit: contain;
+  background: #f5f5f5;
+  width: 55%;
+  margin: 0 auto;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 50%;
+  width: 2.4rem;
+  height: 2.4rem;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  z-index: 1;
+}
+
+.carousel-btn--prev { left: 0.75rem; }
+.carousel-btn--next { right: 0.75rem; }
+
+.project-page-section-title {
+  font-family: 'Caudex', serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.project-page-section-title::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: min(200px, 80%);
+  margin: 0.5rem auto 0;
+  background: linear-gradient(to right, transparent, rgba(0,0,0,0.15) 20%, rgba(0,0,0,0.15) 80%, transparent);
+}
+
+.project-bottom-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  margin-top: 3rem;
+  padding: 0 2rem;
+}
+
+.project-bottom-col {
+  flex: 1;
+}
+
+.project-bottom-text {
+  font-family: 'Caudex', serif;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+}
+
+.tech-stack-list {
+  list-style: disc;
+  padding-left: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  text-align: left;
+  font-family: 'Caudex', serif;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #1a1a1a;
+  letter-spacing: 0.03em;
+}
+
+.tech-name {
+  font-weight: 700;
+}
+
+.project-page-body--portrait {
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.carousel--portrait {
+  flex: 0 0 40%;
+  padding-left: 0;
+}
+
+.carousel--portrait-inner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.carousel-btn--outside {
+  position: static;
+  transform: none;
+  top: auto;
+  left: auto;
+  right: auto;
+  flex-shrink: 0;
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.carousel-track-wrap--portrait {
+  height: clamp(350px, 45vw, 580px);
+  background: #f5f5f5;
+  border: 6px solid #1a1a1a;
+  border-radius: 2.5rem;
+  position: relative;
+  overflow: visible;
+}
+
+.carousel-track-wrap--portrait::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30%;
+  height: 20px;
+  background: #1a1a1a;
+  border-radius: 0 0 1rem 1rem;
+  z-index: 3;
+}
+
+.carousel-track-wrap--portrait::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28%;
+  height: 4px;
+  background: #1a1a1a;
+  border-radius: 2px;
+  z-index: 3;
+}
+
+.carousel--portrait .carousel-slide {
+  object-fit: contain;
+  background: #f5f5f5;
+  border-radius: 2.3rem;
+  overflow: hidden;
+}
+
+.carousel--portrait .carousel-slide {
+  object-fit: contain;
+  background: #f5f5f5;
+}
+
+.carousel-caption {
+  font-family: 'Caudex', serif;
+  font-size: 0.85rem;
+  color: #888;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin-top: 0.6rem;
+}
+
+.carousel-arrow-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  object-fit: contain;
+}
+
+.carousel-arrow-icon.flipped {
+  transform: scaleX(-1);
+}
+
+.carousel-btn:hover {
+  border-color: rgba(0,0,0,0.5);
+  background: rgba(255,255,255,1);
+}
+
+.project-page-desc {
+  flex: 1;
+  font-family: 'Caudex', serif;
+  font-size: 1rem;
+  line-height: 1.9;
+  letter-spacing: 0.04em;
+  color: #1a1a1a;
+  text-align: center;
+  padding: 0.5rem 3rem 0 2rem;
+}
+
+/* ── Mobile ── */
+@media (max-width: 650px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.2rem 1.5rem;
+  }
+
+  .top-nav {
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+
+  .top-nav-item {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .about-layout {
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+    gap: 2rem;
+  }
+
+  .about-image {
+    flex: none;
+    width: 100%;
+  }
+
+  .about-heading {
+    font-size: 1.1rem;
+  }
+
+  .about-body {
+    font-size: 0.85rem;
+  }
+
+  .skills-section {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .projects-layout {
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .project-featured {
+    gap: 1.5rem;
+    max-width: 100%;
+  }
+
+  .project-logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  .project-logo--lg {
+    width: 90px;
+    height: 90px;
+  }
+
+  .project-grid {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .project-small {
+    flex: none;
+    width: 100%;
+  }
+}

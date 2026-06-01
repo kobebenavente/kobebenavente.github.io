@@ -1,0 +1,120 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kobe Benavente — PetStack</title>
+  <link rel="icon" type="image/png" href="Images/website_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Castoro+Titling&family=Caudex:ital,wght@0,400;0,700;1,400;1,700&family=Cutive+Mono&family=Parkinsans:wght@300..800&family=Quicksand:wght@300..700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body class="inner-page">
+
+  <header class="site-header">
+    <a href="index.html" class="site-name">Kobe Benavente</a>
+    <nav class="top-nav">
+      <a href="skills.html" class="top-nav-item">Skills / About</a>
+      <a href="projects.html" class="top-nav-item">Project Work</a>
+      <a href="https://github.com/kobebenavente" target="_blank" rel="noopener" class="top-nav-item">GitHub</a>
+      <a href="https://www.linkedin.com/in/kobebenavente/" target="_blank" rel="noopener" class="top-nav-item">LinkedIn</a>
+    </nav>
+  </header>
+
+  <main class="project-page">
+
+    <div class="project-page-header">
+      <h1 class="project-page-title">PetStack</h1>
+      <p class="project-page-subtitle">A pet-care tracking web app</p>
+      <p class="project-repo"><a href="https://github.com/kobebenavente/PetStack" target="_blank" rel="noopener" class="project-repo-link">https://github.com/kobebenavente/PetStack</a></p>
+    </div>
+
+    <div class="project-page-body project-page-body--portrait">
+
+      <!-- Carousel -->
+      <div class="carousel carousel--portrait">
+        <div class="carousel--portrait-inner">
+          <button class="carousel-btn carousel-btn--outside carousel-btn--prev" aria-label="Previous"><img src="Images/next.png" class="carousel-arrow-icon flipped" /></button>
+          <div class="carousel-track-wrap carousel-track-wrap--portrait">
+            <img src="Images/petstack_screenshots/petstack_home.png" alt="PetStack screenshot" class="carousel-slide active" />
+            <img src="Images/petstack_screenshots/petstack-dashboard.png" alt="PetStack screenshot" class="carousel-slide" />
+            <img src="Images/petstack_screenshots/petstack_logging.png" alt="PetStack screenshot" class="carousel-slide" />
+          </div>
+          <button class="carousel-btn carousel-btn--outside carousel-btn--next" aria-label="Next"><img src="Images/next.png" class="carousel-arrow-icon" /></button>
+        </div>
+        <p class="carousel-caption" id="carousel-caption">Home Screen</p>
+      </div>
+
+      <!-- Description -->
+      <div class="project-page-desc">
+        <h2 class="project-page-section-title">Summary</h2>
+        <p>PetStack is a mobile-focused web app that helps families, roommates, or pet sitters track their pet's daily care through a shared activity log. It was built to solve a common household problem — keeping everyone on the same page about what's been done and what hasn't, without any back and forth.</p>
+        <p style="margin-top: 1rem;">The design goal was straightforward: build something a person could pick up and immediately understand, with no learning curve. Beyond solving the problem itself, PetStack was also a deliberate effort to go deeper with Spring Boot and build a larger-scale Java project using tools, techniques, and design patterns found in professional environments.</p>
+      </div>
+
+    </div>
+
+    <!-- Bottom sections row -->
+    <div class="project-bottom-row">
+
+      <div class="project-bottom-col">
+        <h2 class="project-page-section-title">Technical Stack</h2>
+        <ul class="tech-stack-list">
+          <li><span class="tech-name">Java 21 / Spring Boot</span>: Spring MVC, Spring Security, Spring Data JPA</li>
+          <li><span class="tech-name">HTML5, CSS3, JavaScript</span>: vanilla frontend using ES6 modules</li>
+          <li><span class="tech-name">PostgreSQL / Supabase</span>: relational database and hosted storage</li>
+          <li><span class="tech-name">JWT / BCrypt</span>: stateless authentication with hashed passwords</li>
+          <li><span class="tech-name">Docker</span>: containerized for local development</li>
+          <li><span class="tech-name">Render</span>: cloud deployment platform</li>
+        </ul>
+      </div>
+
+      <div class="project-bottom-col">
+        <h2 class="project-page-section-title">How It Works</h2>
+        <p class="project-bottom-text">PetStack follows a standard layered Spring Boot architecture: Controller → Service → Repository → Entity → Database. Controllers handle HTTP requests and delegate to services, which contain all business logic. Repositories extend JpaRepository for built-in CRUD and custom queries. A DTO layer ensures sensitive fields like password hashes are never exposed in API responses.</p>
+        <p class="project-bottom-text" style="margin-top: 0.75rem;">Every authenticated request includes a JWT in the Authorization header. A custom filter intercepts each request, validates the token, and sets the security context so controllers can access the current user directly. The database consists of five related tables: User, Household, HouseholdMember, Pet, and Activity.</p>
+      </div>
+
+      <div class="project-bottom-col">
+        <h2 class="project-page-section-title">Challenges & Accomplishments</h2>
+        <p class="project-bottom-text" style="font-weight:700; margin-bottom:0.4rem;">Accomplishments</p>
+        <ul class="tech-stack-list" style="margin-bottom:1.2rem;">
+          <li>Built and deployed a full-stack application independently, from backend to frontend to cloud hosting</li>
+          <li>Implemented JWT authentication and a custom Spring Security filter from scratch</li>
+          <li>Designed a clean relational schema with proper relationships and cascade rules</li>
+          <li>Built something practical enough that my own family uses it as a daily tool</li>
+        </ul>
+        <p class="project-bottom-text" style="font-weight:700; margin-bottom:0.4rem;">Challenges</p>
+        <ul class="tech-stack-list">
+          <li>Designing the HouseholdMember join table with a composite primary key to enforce membership constraints while also storing per-membership data</li>
+          <li>Keeping the frontend lightweight with vanilla JavaScript while still supporting dynamic views and ES6 module structure without a build tool</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </main>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      const slides = Array.from(document.querySelectorAll('.carousel-slide'));
+      const caption = document.getElementById('carousel-caption');
+      const captions = ['Home Screen', 'Dashboard', 'Logging'];
+      let idx = 0;
+
+      function goTo(n) {
+        slides[idx].classList.remove('active');
+        idx = (n + slides.length) % slides.length;
+        slides[idx].classList.add('active');
+        caption.textContent = captions[idx];
+      }
+
+      document.querySelector('.carousel-btn--prev').addEventListener('click', () => goTo(idx - 1));
+      document.querySelector('.carousel-btn--next').addEventListener('click', () => goTo(idx + 1));
+    })();
+  </script>
+</body>
+</html>
+
