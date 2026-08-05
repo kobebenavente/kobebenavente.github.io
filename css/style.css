@@ -7,7 +7,7 @@
 body {
   background: #fff;
   color: #1a1a1a;
-  font-family: 'Parkinsans', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -35,19 +35,19 @@ body {
 }
 
 .arched-title text {
-  font-family: 'Castoro Titling', serif;
-  font-size: 52px;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 68px;
   fill: #1a1a1a;
   letter-spacing: 0.04em;
 }
 
 /* ── Tagline ── */
 .tagline {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: clamp(1.25rem, 2vw, 1.2rem);
   font-weight: 300;
   letter-spacing: 0.08em;
-  color: #666;
+  color: #1a1a1a;
   text-align: center;
   margin-top: clamp(-3.4rem, -6vw, -2rem);
   margin-bottom: 0.5rem;
@@ -64,22 +64,21 @@ body {
 }
 
 .menu-item {
-  font-family: 'Castoro Titling', serif;
-  font-size: 1.35rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  text-transform: lowercase;
   text-decoration: none;
   color: #1a1a1a;
-  opacity: 0.5;
-  transition: opacity 0.2s ease, font-weight 0.1s ease;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
   padding: 0.25rem 0;
 }
 
 .menu-item:hover {
   opacity: 1;
-  font-weight: 700;
-  text-shadow: 0 0 12px rgba(0,0,0,0.25), 0 0 24px rgba(0,0,0,0.1);
+  text-shadow: 0 0 12px rgba(0,0,0,0.15);
 }
 
 /* ── Inner page font scale ── */
@@ -107,10 +106,10 @@ body.inner-page {
 }
 
 .site-name {
-  font-family: 'Castoro Titling', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
+  font-weight: 300;
+  letter-spacing: normal;
   text-decoration: none;
   color: #1a1a1a;
 }
@@ -123,14 +122,14 @@ body.inner-page {
 
 
 .top-nav-item {
-  font-family: 'Castoro Titling', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.05rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  font-weight: 300;
+  letter-spacing: normal;
+  text-transform: lowercase;
   text-decoration: none;
   color: #1a1a1a;
-  opacity: 0.35;
+  opacity: 0.6;
   transition: opacity 0.2s ease;
 }
 
@@ -175,10 +174,10 @@ body.inner-page {
 }
 
 .about-heading {
-  font-family: 'Caudex', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: normal;
   margin-bottom: 0;
   text-align: center;
 }
@@ -194,7 +193,7 @@ body.inner-page {
 }
 
 .about-body {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1rem;
   line-height: 1.9;
   letter-spacing: 0.06em;
@@ -212,10 +211,11 @@ body.inner-page {
 }
 
 .skills-heading {
-  font-family: 'Caudex', serif;
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: normal;
+  color: #1a1a1a;
   margin-bottom: 1.2rem;
 }
 
@@ -233,9 +233,9 @@ body.inner-page {
 }
 
 .skill-cat-title {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: #1a1a1a;
@@ -251,7 +251,7 @@ body.inner-page {
 }
 
 .skill-list li {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.05rem;
   color: #1a1a1a;
   letter-spacing: 0.04em;
@@ -284,7 +284,7 @@ body.inner-page {
 }
 
 .coursework-toggle {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.95rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -324,23 +324,23 @@ details[open] .coursework-toggle::after {
 }
 
 .coursework-list li {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.9rem;
   color: #1a1a1a;
   letter-spacing: 0.04em;
 }
 
 .edu-university {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.05rem;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 0.04em;
   color: #1a1a1a;
   margin-bottom: 0.1rem;
 }
 
 .edu-dates {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.85rem;
   font-weight: 400;
   color: #888;
@@ -350,7 +350,7 @@ details[open] .coursework-toggle::after {
 }
 
 .edu-details {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1rem;
   letter-spacing: 0.04em;
   color: #1a1a1a;
@@ -375,7 +375,7 @@ details[open] .coursework-toggle::after {
 }
 
 .work-desc {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.95rem;
   line-height: 1.7;
   color: #1a1a1a;
@@ -410,9 +410,9 @@ details[open] .coursework-toggle::after {
 }
 
 .interest-title {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.95rem;
-  font-weight: 700;
+  font-weight: 300;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: #1a1a1a;
@@ -422,7 +422,7 @@ details[open] .coursework-toggle::after {
 }
 
 .interest-desc {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.95rem;
   line-height: 1.6;
   color: #1a1a1a;
@@ -437,7 +437,7 @@ details[open] .coursework-toggle::after {
 }
 
 .interest-list li {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.9rem;
   color: #1a1a1a;
   letter-spacing: 0.03em;
@@ -452,10 +452,10 @@ details[open] .coursework-toggle::after {
 }
 
 .projects-heading {
-  font-family: 'Caudex', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: normal;
   text-align: center;
   margin-bottom: 1.5rem;
   color: #1a1a1a;
@@ -503,8 +503,8 @@ details[open] .coursework-toggle::after {
 }
 
 .project-logo--lg {
-  width: 120px;
-  height: 120px;
+  width: 150px;
+  height: 150px;
 }
 
 .project-info {
@@ -514,15 +514,15 @@ details[open] .coursework-toggle::after {
 }
 
 .project-title {
-  font-family: 'Castoro Titling', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1.1rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 300;
+  letter-spacing: normal;
   color: #1a1a1a;
 }
 
 .project-desc {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.95rem;
   letter-spacing: 0.04em;
   color: #1a1a1a;
@@ -563,16 +563,16 @@ details[open] .coursework-toggle::after {
 }
 
 .project-page-title {
-  font-family: 'Caudex', serif;
-  font-size: 1.6rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  font-weight: 300;
+  letter-spacing: normal;
   color: #1a1a1a;
   margin-bottom: 0.4rem;
 }
 
 .project-repo {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.85rem;
   color: #888;
   margin-top: 0.4rem;
@@ -589,10 +589,10 @@ details[open] .coursework-toggle::after {
 }
 
 .project-page-subtitle {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.95rem;
-  letter-spacing: 0.06em;
-  color: #666;
+  letter-spacing: normal;
+  color: #1a1a1a;
 }
 
 .project-page-body {
@@ -656,12 +656,13 @@ details[open] .coursework-toggle::after {
 .carousel-btn--next { right: 0.75rem; }
 
 .project-page-section-title {
-  font-family: 'Caudex', serif;
-  font-size: 1.2rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 300;
+  letter-spacing: normal;
   text-align: center;
   margin-bottom: 1.2rem;
+  color: #1a1a1a;
 }
 
 .project-page-section-title::after {
@@ -686,7 +687,7 @@ details[open] .coursework-toggle::after {
 }
 
 .project-bottom-text {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.9rem;
   line-height: 1.7;
   color: #1a1a1a;
@@ -700,7 +701,7 @@ details[open] .coursework-toggle::after {
   flex-direction: column;
   gap: 0.6rem;
   text-align: left;
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.9rem;
   line-height: 1.6;
   color: #1a1a1a;
@@ -787,7 +788,7 @@ details[open] .coursework-toggle::after {
 }
 
 .carousel-caption {
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 0.85rem;
   color: #888;
   letter-spacing: 0.06em;
@@ -812,13 +813,27 @@ details[open] .coursework-toggle::after {
 
 .project-page-desc {
   flex: 1;
-  font-family: 'Caudex', serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 1rem;
   line-height: 1.9;
   letter-spacing: 0.04em;
   color: #1a1a1a;
   text-align: center;
   padding: 0.5rem 3rem 0 2rem;
+}
+
+/* ── Nav logos ── */
+.nav-logo {
+  height: 1em;
+  width: auto;
+  vertical-align: middle;
+  margin-right: 0.35em;
+  display: inline-block;
+}
+
+.nav-logo--linkedin {
+  position: relative;
+  top: -0.1em;
 }
 
 /* ── Mobile ── */
